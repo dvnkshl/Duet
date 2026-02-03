@@ -276,7 +276,3 @@ This runs a tiny `node --test` suite using a local “fake agent” process (no 
 ```bash
 npm run build
 ```
-
-## Tweet-sized description
-
-Duet Code is an experimental (and insanely expensive) “panel of experts” coding CLI: Codex + Claude Code plan → debate → implement (driver/navigator swaps) → tests → converge → patch. Slow, but fascinating.
