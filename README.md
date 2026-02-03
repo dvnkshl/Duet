@@ -16,7 +16,7 @@ npm run build
 node dist/cli.js init --force
 ```
 
-## Install (after you publish)
+## Install
 
 Global install:
 
@@ -57,39 +57,6 @@ duet "Build a tiny CLI todo app in TypeScript" --interactive --ui --apply
 
 # Backwards-compatible alias
 orchestrate "Build a tiny CLI todo app in TypeScript" --interactive --ui --apply
-```
-
-## Repo hygiene (before GitHub / npm publish)
-
-This repo accumulates large local artifacts under `.orchestrator/` (sessions, worktrees, transcripts). They’re ignored by git, but you can remove them to keep your working directory clean:
-
-```bash
-npm run clean:repo
-```
-
-To also remove local scratch projects (like `my-todo-app/`) and large sandbox docs:
-
-```bash
-npm run clean:repo -- --all
-```
-
-## Publishing checklist (npm)
-
-Before publishing, sanity-check what will ship:
-
-```bash
-npm test
-npm pack --dry-run
-```
-
-Then publish:
-
-```bash
-# bump version (pick one)
-npm version patch
-
-# publish (use --access public if needed)
-npm publish
 ```
 
 ## How it works (flow)
@@ -276,7 +243,3 @@ This runs a tiny `node --test` suite using a local “fake agent” process (no 
 ```bash
 npm run build
 ```
-
-## Tweet-sized description
-
-Duet Code is an experimental (and insanely expensive) “panel of experts” coding CLI: Codex + Claude Code plan → debate → implement (driver/navigator swaps) → tests → converge → patch. Slow, but fascinating.
