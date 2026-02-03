@@ -1,0 +1,84 @@
+{
+  "agents": {
+    "codex": {
+      "command": "codex",
+      "args": [
+        "exec",
+        "--skip-git-repo-check",
+        "--full-auto",
+        "--color",
+        "never",
+        "-C",
+        "{workdir}"
+      ],
+      "promptMode": "stdin",
+      "versionArgs": ["--version"],
+      "minVersion": "0.0.0",
+      "capabilities": []
+    },
+    "claude": {
+      "command": "claude",
+      "args": ["-p", "--permission-mode", "acceptEdits"],
+      "promptMode": "stdin",
+      "versionArgs": ["--version"],
+      "minVersion": "0.0.0",
+      "capabilities": []
+    }
+  },
+  "decision": {
+    "mode": "judge",
+    "judgeAgent": "codex",
+    "debateRounds": 1
+  },
+  "review": {
+    "enabled": true,
+    "reviewer": "both"
+  },
+  "tests": {
+    "enabled": false,
+    "command": "npm",
+    "args": ["test"]
+  },
+  "lint": {
+    "enabled": false,
+    "command": "npm",
+    "args": ["run", "lint"]
+  },
+  "memory": {
+    "enabled": false,
+    "backend": "file",
+    "path": ".orchestrator/memory/memory.jsonl",
+    "maxResults": 5
+  },
+  "context": {
+    "includeFiles": ["README.md", "README", "package.json", "tsconfig.json"],
+    "maxFileBytes": 20000,
+    "maxExcerptChars": 2000,
+    "isolateWorkspaces": true
+  },
+  "guardrails": {
+    "enabled": true,
+    "maxFilesChanged": 25,
+    "maxLinesAdded": 800,
+    "maxLinesRemoved": 800,
+    "forbiddenPaths": [".env", ".env.*", "*.pem", "*.key"],
+    "forbidDependencyChanges": true
+  },
+  "converge": {
+    "enabled": true,
+    "maxRounds": 1
+  },
+  "limits": {
+    "agentTimeoutMs": 900000,
+    "judgeTimeoutMs": 300000
+  },
+  "implementation": {
+    "mode": "joint",
+    "driver": "auto",
+    "maxRounds": 2,
+    "applyNavigatorPatch": "auto",
+    "testsDuringLoop": true,
+    "swapDriverOnFail": true,
+    "swapDriverEachRound": true
+  }
+}

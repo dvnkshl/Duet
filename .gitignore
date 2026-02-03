@@ -1,0 +1,38 @@
+## Dependencies
+node_modules/
+
+## Build output (kept out of git; included in npm package via package.json "files")
+dist/
+*.tsbuildinfo
+
+## Test output
+coverage/
+.nyc_output/
+
+## Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+## Duet Code run artifacts (never commit)
+.orchestrator/
+
+## OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+## Secrets / local config
+.env
+.env.*
+
+## Local scratch / examples generated during development (never commit)
+my-todo-app/
+devan-test/
+sandbox/
+
+## npm pack artifacts
+*.tgz

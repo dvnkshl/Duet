@@ -1,0 +1,28 @@
+{
+  "name": "duet-code",
+  "version": "0.1.0",
+  "description": "Experimental panel-of-experts coding CLI (Codex + Claude Code).",
+  "private": false,
+  "type": "module",
+  "bin": {
+    "duet": "dist/cli.js",
+    "orchestrate": "dist/cli.js"
+  },
+  "files": [
+    "dist/*.js",
+    "assets/",
+    "templates/",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepack": "npm run build",
+    "clean:repo": "node scripts/clean-repo.mjs",
+    "test": "npm run build && node --test dist/__tests__/*.test.js",
+    "start": "node dist/cli.js"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "typescript": "^5.7.2"
+  }
+}
