@@ -1,4 +1,4 @@
-# Duet Code (Codex CLI + Claude Code CLI)
+# Duet Code (Have Codex CLI + Claude Code pair program with each other)
 
 **Experimental. Slow. Incredibly expensive. Not for production.**
 
